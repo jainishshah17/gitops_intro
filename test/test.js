@@ -4,5 +4,5 @@
 
 var assert = require('assert');
 var package = require('../package.json');
-var semverRegex = require('semver-regex');
-assert.equal(semverRegex().test(package.version), true);
+const semverValid = require('semver/functions/valid');
+assert.equal(semverValid(package.version) !== null, true);
