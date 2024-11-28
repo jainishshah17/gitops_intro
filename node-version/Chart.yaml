@@ -1,0 +1,16 @@
+apiVersion: v2
+name: node-version
+description: A basic Node Application with HTTP server
+version: 0.1.2
+type: application
+keywords:
+  - http
+  - node
+  - web
+  - npm
+home: https://github.com/jainishshah17/gitops_intro
+sources:
+  - https://github.com/jainishshah17/gitops_intro
+maintainers:
+  - name: jainishshah17
+    email: jainishshah@yahoo.com
