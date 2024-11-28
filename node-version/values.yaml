@@ -23,7 +23,7 @@ service:
   externalIPs: []
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
-  type: ClusterIP
+  type: NodePort
   port: 3000
   nodePort: ""
 
