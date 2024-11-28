@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "node-version.fullname" . }}
@@ -14,6 +14,10 @@ spec:
       maxSurge: 0
       maxUnavailable: 1
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: {{ template "node-version.name" . }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
@@ -41,7 +45,4 @@ spec:
       {{- if .Values.image.secretName }}
       imagePullSecrets:
         - name: {{ .Values.image.secretName }}
-      {{- else }}
-      imagePullSecrets:
-        - name: {{ template "node-version.fullname" . }}-regsecret
-      {{- end -}}
+      {{- end }}
